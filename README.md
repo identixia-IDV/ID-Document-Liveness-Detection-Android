@@ -109,9 +109,9 @@ Sample id:
 
 Set the key, then activate:
 
-[https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/blob/750df4f6b894a753/app/src/main/java/com/identixia/documentliveness/MainActivity.kt#L26-L27](https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/blob/750df4f6b894a753/app/src/main/java/com/identixia/documentliveness/MainActivity.kt#L26-L27)
+https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/blob/750df4f6b894a75308bbd6ae3fed21654190d361/app/src/main/java/com/identixia/documentliveness/MainActivity.kt#L26-L27
 
-[https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/blob/750df4f6b894a753/app/src/main/java/com/identixia/documentliveness/MainActivity.kt#L58-L58](https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/blob/750df4f6b894a753/app/src/main/java/com/identixia/documentliveness/MainActivity.kt#L58-L58)
+https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/blob/750df4f6b894a75308bbd6ae3fed21654190d361/app/src/main/java/com/identixia/documentliveness/MainActivity.kt#L58-L58
 
 ## <img src="https://api.iconify.design/lucide/braces.svg?color=%230F766E" width="24" height="24" alt="" /> API
 
