@@ -1,0 +1,13 @@
+// Consumes the Identixia Document Reader AAR produced by ID-Document-Recognition-Liveness-Detection-Android-SDK.
+// Filled by: python scripts/export.py  (from the Build kit)
+// The demo app must depend on project(':libdocumentlivenesssdk') only — no app/jniLibs overlays.
+def aar = file("documentlivenesssdk.aar")
+if (!aar.exists()) {
+    throw new GradleException(
+        "Missing libdocumentlivenesssdk/documentlivenesssdk.aar.\n" +
+        "From ID-Document-Recognition-Liveness-Detection-Android-SDK run:\n" +
+        "  python scripts/export.py --rebuild"
+    )
+}
+configurations.maybeCreate("default")
+artifacts.add("default", aar)

@@ -1,0 +1,62 @@
+package com.identixia.documentliveness
+
+import com.identixia.documentrecognitionsdk.DocumentRecognitionSDK
+import org.json.JSONObject
+
+/** Parsed [DocumentRecognitionSDK.getLicenseStatus] for UI and capability checks. */
+data class LicenseStatus(
+    val licensed: Boolean,
+    val level: Int,
+    val levelName: String,
+    val recognition: Boolean,
+    val authenticity: Boolean,
+    val label: String,
+) {
+    companion object {
+        var verdict: String = "…"
+        fun current(): LicenseStatus {
+            return try {
+                fromJson(DocumentRecognitionSDK.getLicenseStatus())
+            } catch (_: Throwable) {
+                notLicensed()
+            }
+        }
+
+        fun fromJson(json: String?): LicenseStatus {
+            return try {
+                val o = JSONObject(json ?: "{}")
+                LicenseStatus(
+                    licensed = o.optBoolean("licensed", false),
+                    level = o.optInt("level", -1),
+                    levelName = o.optString("levelName", "None"),
+                    recognition = o.optBoolean("recognition", false),
+                    authenticity = o.optBoolean("authenticity", false),
+                    label = o.optString("label", "No license"),
+                )
+            } catch (_: Exception) {
+                notLicensed()
+            }
+        }
+
+        private fun notLicensed() = LicenseStatus(
+            licensed = false,
+            level = -1,
+            levelName = "None",
+            recognition = false,
+            authenticity = false,
+            label = "No license",
+        )
+    }
+
+    /** User-facing note when a requested capability is missing; null if allowed. */
+    fun denyMessage(wantRecognition: Boolean, wantAuthenticity: Boolean): String? {
+        val parts = mutableListOf<String>()
+        if (wantAuthenticity && !authenticity) {
+            parts += "This license does not include liveness ($label)."
+        }
+        if (wantRecognition && !recognition) {
+            parts += "This license does not include recognition ($label)."
+        }
+        return parts.takeIf { it.isNotEmpty() }?.joinToString("\n")
+    }
+}
