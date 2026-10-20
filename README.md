@@ -42,7 +42,7 @@ git clone https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Androi
 cd ID-Document-Liveness-Detection-Android
 ```
 
-Download [`documentfullsdk.aar`](https://github.com/identixia-IDV/ID-Document-Recognition-Liveness-Detection-Android/releases/latest) from the [ID-Document-Recognition-Liveness-Detection-Android Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Liveness-Detection-Android/releases/latest). Save the file as `libdocumentlivenesssdk/documentlivenesssdk.aar`.
+Download [`documentlivenesssdk.aar`](https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/releases/tag/runtime) from this repository’s [Releases](https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/releases/tag/runtime). Save the file as `libdocumentlivenesssdk/documentlivenesssdk.aar`.
 
 ### <img src="https://img.shields.io/badge/-2-0F766E?style=for-the-badge" alt="" /> Run the demo
 
@@ -50,13 +50,10 @@ Open this folder in **Android Studio** and run on a physical arm64 phone.
 
 ### <img src="https://img.shields.io/badge/-3-0F766E?style=for-the-badge" alt="" /> Activate / license
 
-The sample runs with its bundled demo key. Keep the sample application id.
-
-For your own app:
-
-1. Email your Android application id or iOS bundle id, and the product name, to [contact@identixia.com](mailto:contact@identixia.com).
-2. Replace the demo key in the sample source with the key you receive.
-3. Rebuild. The sample activates that key before it initializes the SDK.
+1. Copy the id of your own app. On Android this is the application id. On iOS this is the bundle id. The sample id is `com.identixia.documentliveness`.
+2. Email that id and the product name to [contact@identixia.com](mailto:contact@identixia.com).
+3. Replace the demo key in `app/src/main/java/com/identixia/documentliveness/MainActivity.kt` with the key you receive.
+4. Rebuild, then continue with the next step.
 
 ### <img src="https://img.shields.io/badge/-4-0F766E?style=for-the-badge" alt="" /> First capture
 
@@ -84,7 +81,7 @@ Wait for the Home screen to show **Ready**, then select a demo feature. Check th
 
 ## <img src="https://api.iconify.design/lucide/package.svg?color=%230F766E" width="24" height="24" alt="" /> SDK installation
 
-Download [`documentfullsdk.aar`](https://github.com/identixia-IDV/ID-Document-Recognition-Liveness-Detection-Android/releases/latest) from the [ID-Document-Recognition-Liveness-Detection-Android Releases](https://github.com/identixia-IDV/ID-Document-Recognition-Liveness-Detection-Android/releases/latest). Save the file as `libdocumentlivenesssdk/documentlivenesssdk.aar`.
+Download [`documentlivenesssdk.aar`](https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/releases/tag/runtime) from this repository’s [Releases](https://github.com/identixia-IDV/ID-Document-Liveness-Detection-Android/releases/tag/runtime). Save the file as `libdocumentlivenesssdk/documentlivenesssdk.aar`.
 
 The AAR already contains `document.xdb` when built correctly.
 
